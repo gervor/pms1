@@ -10,6 +10,7 @@
                         <field name="guest_id"/>
                         <field name="arrival_date"/>
                         <field name="departure_date"/>
+                        <field name="booked_guest_ids"/>
                     </group>
                     <notebook>
                         <page string="Rooms BBB">
@@ -23,7 +24,7 @@
                                         <field name="room_id"/>
                                         <field name="booking_room_guest_ids">
                                             <tree editable="bottom">
-                                                <field name="guest_id" domain="[('id', 'not in', parent.booked_guest_ids)]"/>
+                                                <field name="guest_id" domain="[('id', 'not in', parent.parent.booked_guest_ids)]"/>
                                                 <field name="departure_date"/>
                                             </tree>
                                         </field>

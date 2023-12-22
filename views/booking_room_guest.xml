@@ -7,7 +7,7 @@
             <form string="Booking Room Guest">
                 <sheet>
                     <group>
-                        <field name="guest_id" domain="[('id', 'not in', parent.booked_guest_ids)]"/>
+                        <field name="guest_id" domain="[('id', 'not in', parent.parent.booked_guest_ids)]"/>
                         <field name="departure_date"/>
                     </group>
                 </sheet>

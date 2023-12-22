@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Existing Roomplan Action -->
+        <record id="action_roomplan" model="ir.actions.client">
+            <field name="name">Roomplan</field>
+            <field name="tag">pms1.roomplan</field>
+        </record>
+
+        <!-- Main PMS Menu -->
+        <menuitem name="PMS" id="menu_pms" sequence="10"/>
+
+        <!-- New Admin Menu under PMS -->
+        <menuitem name="Admin" id="menu_pms1_admin" parent="menu_pms" sequence="20"/>
+
+        <!-- Bookings under Admin -->
+        <menuitem name="Bookings" id="menu_pms1_bookings" parent="menu_pms1_admin" sequence="10" action="action_bookings"/>
+
+        <!-- Rooms under Admin -->
+        <menuitem name="Rooms" id="menu_pms1_rooms" parent="menu_pms1_admin" sequence="10" action="action_rooms"/>
+
+        <!-- Guests under Admin -->
+        <menuitem name="Guests" id="menu_pms1_guests" parent="menu_pms1_admin" sequence="20" action="action_guests"/>
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pms1_booking,model_pms1_booking,pms1.model_pms1_booking,,1,1,1,1
+access_pms1_room,model_pms1_room,pms1.model_pms1_room,,1,1,1,1
+access_pms1_guest,model_pms1_guest,pms1.model_pms1_guest,,1,1,1,1
+access_pms1_booking_room,model_pms1_booking_room,pms1.model_pms1_booking_room,,1,1,1,1
+access_pms1_booking_room_guest,model_pms1_booking_room_guest,pms1.model_pms1_booking_room_guest,,1,1,1,1

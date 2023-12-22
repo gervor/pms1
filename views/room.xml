@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_room_form" model="ir.ui.view">
+        <field name="name">room.form</field>
+        <field name="model">pms1.room</field>
+        <field name="arch" type="xml">
+            <form string="room">
+                <sheet>
+                    <group>
+                        <field name="room_no"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+                <!-- Add chatter below the sheet in the form view -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_room_tree" model="ir.ui.view">
+        <field name="name">room.tree</field>
+        <field name="model">pms1.room</field>
+        <field name="arch" type="xml">
+            <tree string="room">
+                <field name="room_no"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Define an action to open the views -->
+    <record id="action_rooms" model="ir.actions.act_window">
+        <field name="name">rooms</field>
+        <field name="res_model">pms1.room</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first room
+            </p>
+        </field>
+    </record>
+
+    <!-- Add a menu item to access your brewery model -->
+
+</odoo>

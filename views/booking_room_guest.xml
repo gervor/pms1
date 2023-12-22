@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_booking_room_guest_form" model="ir.ui.view">
+        <field name="name">booking_room_guest.form</field>
+        <field name="model">pms1.booking_room_guest</field>
+        <field name="arch" type="xml">
+            <form string="Booking Room Guest">
+                <sheet>
+                    <group>
+                        <field name="guest_id" domain="[('id', 'not in', parent.booked_guest_ids)]"/>
+                        <field name="departure_date"/>
+                    </group>
+                </sheet>
+                <!-- Chatter for messaging and activities -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_booking_room_guest_tree" model="ir.ui.view">
+        <field name="name">booking_room_guest.tree</field>
+        <field name="model">pms1.booking_room_guest</field>
+        <field name="arch" type="xml">
+            <tree string="Booking Room Guests">
+                <field name="guest_id"/>
+            </tree>
+        </field>
+    </record>
+
+        <record id="action_booking_room_guests" model="ir.actions.act_window">
+        <field name="name">Booking Room Guests</field>
+        <field name="res_model">pms1.booking_room_guest</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create the first booking room guest
+            </p>
+        </field>
+    </record>
+
+</odoo>
